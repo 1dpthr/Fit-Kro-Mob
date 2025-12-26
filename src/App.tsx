@@ -28,6 +28,10 @@ function AppContent() {
     if (!loading) {
       if (user) {
         setAppState('app')
+      } else {
+        // User is not authenticated, go to auth screen
+        setAppState('auth')
+        setActiveScreen('home') // Reset to home screen
       }
     }
   }, [user, loading])

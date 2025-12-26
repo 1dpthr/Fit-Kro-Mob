@@ -91,6 +91,9 @@ export const ProfileScreen: React.FC = () => {
     try {
       await signOut()
       toast.success('Signed out successfully')
+      
+      // Navigation will be handled automatically by the auth state change
+      // The App.tsx effect will detect user = null and switch to auth screen
     } catch (error) {
       console.error('Error signing out:', error)
       toast.error('Failed to sign out')
